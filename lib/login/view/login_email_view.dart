@@ -42,7 +42,7 @@ class LoginEmailView extends StatelessWidget {
                               TextButton(
                                 onPressed: () {
                                   context.router
-                                      .replace(const LoginForgotPasswordView());
+                                      .push(const LoginForgotPasswordView());
                                 },
                                 child: const Text('Forgot password?'),
                               ),
