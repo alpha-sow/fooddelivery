@@ -11,10 +11,11 @@ class LoginTextField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Text(label ?? ''),
-        ),
+        if (label != null)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(label ?? ''),
+          ),
         TextField(
           decoration: InputDecoration(
             hintText: hintText,

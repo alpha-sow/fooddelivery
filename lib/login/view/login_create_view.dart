@@ -22,7 +22,7 @@ class LoginCreateView extends StatelessWidget {
                   children: [
                     const LoginHeader(
                       title: 'Login to Your account.',
-                      subTitle:
+                      subtitle:
                           'Create an account to start looking for the food you like',
                     ),
                     Padding(

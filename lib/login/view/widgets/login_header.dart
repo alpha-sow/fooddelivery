@@ -4,11 +4,11 @@ class LoginHeader extends StatelessWidget {
   const LoginHeader({
     super.key,
     required this.title,
-    required this.subTitle,
+    required this.subtitle,
   });
 
   final String title;
-  final String subTitle;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,12 @@ class LoginHeader extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.displayMedium,
+          style: Theme.of(context).textTheme.headlineLarge,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Text(
-            subTitle,
+            subtitle,
           ),
         ),
       ],

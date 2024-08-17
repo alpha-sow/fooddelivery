@@ -29,7 +29,7 @@ class WelcomeCard extends StatelessWidget {
             children: [
               Text(
                 'We serve incomparable delicacies',
-                style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                     ),

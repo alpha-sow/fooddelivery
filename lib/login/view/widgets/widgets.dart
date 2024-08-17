@@ -1,3 +1,4 @@
+export 'forgot_password_modal.dart';
 export 'login_button.dart';
 export 'login_divider.dart';
 export 'login_header.dart';

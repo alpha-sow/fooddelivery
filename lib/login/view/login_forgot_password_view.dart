@@ -18,7 +18,7 @@ class LoginForgotPasswordView extends StatelessWidget {
               children: [
                 LoginHeader(
                   title: 'Forgot password?',
-                  subTitle: 'Enter your email address and we’ll send you '
+                  subtitle: 'Enter your email address and we’ll send you '
                       'confirmation code to reset your password',
                 ),
                 LoginTextField(
@@ -31,10 +31,13 @@ class LoginForgotPasswordView extends StatelessWidget {
         ),
         bottomSheet: Container(
           color: Colors.white,
-          child: const Padding(
-            padding: EdgeInsets.all(25.0),
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
             child: LoginButton(
               label: 'Continue',
+              onPressed: () {
+                context.router.maybePop(true);
+              },
             ),
           ),
         ),

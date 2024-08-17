@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class LoginIconButton extends StatelessWidget {
-  const LoginIconButton({super.key, required this.child, this.onPressed});
+  const LoginIconButton({
+    super.key,
+    required this.child,
+    this.onPressed,
+  });
 
   final Widget child;
   final void Function()? onPressed;
