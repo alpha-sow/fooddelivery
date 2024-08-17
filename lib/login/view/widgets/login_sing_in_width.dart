@@ -11,31 +11,37 @@ class LoginSingInWidth extends StatelessWidget {
     return Column(
       children: [
         const LoginDivider(),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            LoginIconButton(
-              onPressed: () {},
-              child: Assets.images.icons.google.svg(
-                width: 25,
-                height: 25,
-              ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: SizedBox(
+            width: 200,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                LoginIconButton(
+                  onPressed: () {},
+                  child: Assets.images.icons.google.svg(
+                    width: 25,
+                    height: 25,
+                  ),
+                ),
+                LoginIconButton(
+                  onPressed: () {},
+                  child: Assets.images.icons.facebook.svg(
+                    width: 25,
+                    height: 25,
+                  ),
+                ),
+                LoginIconButton(
+                  onPressed: () {},
+                  child: Assets.images.icons.apple.svg(
+                    width: 25,
+                    height: 25,
+                  ),
+                ),
+              ],
             ),
-            LoginIconButton(
-              onPressed: () {},
-              child: Assets.images.icons.facebook.svg(
-                width: 25,
-                height: 25,
-              ),
-            ),
-            LoginIconButton(
-              onPressed: () {},
-              child: Assets.images.icons.apple.svg(
-                width: 25,
-                height: 25,
-              ),
-            ),
-          ],
+          ),
         ),
       ],
     );

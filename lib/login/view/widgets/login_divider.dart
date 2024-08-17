@@ -11,10 +11,7 @@ class LoginDivider extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _Separator(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: Text('Or sign in with'),
-          ),
+          Flexible(child: Text(' Or sign in wit ')),
           _Separator(),
         ],
       ),

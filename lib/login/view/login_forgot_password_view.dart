@@ -11,26 +11,32 @@ class LoginForgotPasswordView extends StatelessWidget {
     return GestureDetector(
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
-        body: const SafeArea(
-          child: Padding(
-            padding: EdgeInsets.all(25.0),
-            child: Column(
-              children: [
-                LoginHeader(
-                  title: 'Forgot password?',
-                  subtitle: 'Enter your email address and we’ll send you '
-                      'confirmation code to reset your password',
+        body: SafeArea(
+          child: Center(
+            child: Container(
+              constraints: const BoxConstraints(maxWidth: 500),
+              child: const Padding(
+                padding: EdgeInsets.all(25.0),
+                child: Column(
+                  children: [
+                    LoginHeader(
+                      title: 'Forgot password?',
+                      subtitle: 'Enter your email address and we’ll send you '
+                          'confirmation code to reset your password',
+                    ),
+                    LoginTextField(
+                      label: 'Email Address',
+                      hintText: 'Enter Email',
+                    ),
+                  ],
                 ),
-                LoginTextField(
-                  label: 'Email Address',
-                  hintText: 'Enter Email',
-                ),
-              ],
+              ),
             ),
           ),
         ),
         bottomSheet: Container(
           color: Colors.white,
+          constraints: const BoxConstraints(maxWidth: 500),
           child: Padding(
             padding: const EdgeInsets.all(25.0),
             child: LoginButton(

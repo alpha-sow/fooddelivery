@@ -20,14 +20,17 @@ class AppRouter extends RootStackRouter {
               children: [
                 AutoRoute(
                   initial: true,
+                  path: "",
                   page: WelcomeFirstView.page,
                   type: const RouteType.custom(),
                 ),
                 AutoRoute(
+                  path: "",
                   page: WelcomeSecondView.page,
                   type: const RouteType.custom(),
                 ),
                 AutoRoute(
+                  path: "",
                   page: WelcomeThirdView.page,
                   type: const RouteType.custom(),
                 )

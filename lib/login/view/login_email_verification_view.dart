@@ -18,20 +18,26 @@ class LoginEmailVerificationView extends StatelessWidget {
             style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
-        body: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25.0),
-          child: Column(
-            children: [
-              LoginHeader(
-                title: 'Email verification',
-                subtitle: 'Enter the verification code we send you '
-                    'on: Alberts******@gmail.com',
+        body: Center(
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 500),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              child: Column(
+                children: [
+                  LoginHeader(
+                    title: 'Email verification',
+                    subtitle: 'Enter the verification code we send you '
+                        'on: Alberts******@gmail.com',
+                  ),
+                  _VerificationCode(),
+                ],
               ),
-              _VerificationCode(),
-            ],
+            ),
           ),
         ),
         bottomSheet: Container(
+          constraints: const BoxConstraints(maxWidth: 500),
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(25),

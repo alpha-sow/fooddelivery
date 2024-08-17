@@ -18,69 +18,86 @@ class _LoginEmailViewState extends State<LoginEmailView> {
       onTap: FocusScope.of(context).unfocus,
       child: Scaffold(
         body: SafeArea(
-          child: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const LoginHeader(
-                      title: 'Login to Your account.',
-                      subtitle: 'Please sign in to your account',
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: Column(
-                        children: [
-                          const LoginTextField(
-                            label: 'Email Address',
-                            hintText: 'Enter Email',
-                          ),
-                          const LoginTextField(
-                            label: 'Password',
-                            hintText: 'Password',
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+          child: Center(
+            child: Container(
+              constraints: const BoxConstraints(maxWidth: 500),
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(25.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const LoginHeader(
+                          title: 'Login to Your account.',
+                          subtitle: 'Please sign in to your account',
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10.0),
+                          child: Column(
                             children: [
-                              TextButton(
-                                onPressed: () async {
-                                  final result = await context.router.push<
-                                              bool>(
-                                          const LoginForgotPasswordView()) ??
-                                      false;
-                                  if (!context.mounted) return;
-                                  if (result) {
-                                    await openModelForgotPassword(context);
-                                  }
-                                },
-                                child: const Text('Forgot password?'),
+                              const LoginTextField(
+                                label: 'Email Address',
+                                hintText: 'Enter Email',
+                              ),
+                              const LoginTextField(
+                                label: 'Password',
+                                hintText: 'Password',
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Flexible(
+                                    child: GestureDetector(
+                                      onTap: () async {
+                                        final result = await context.router.push<
+                                                    bool>(
+                                                const LoginForgotPasswordView()) ??
+                                            false;
+                                        if (!context.mounted) return;
+                                        if (result) {
+                                          await openModelForgotPassword(
+                                              context);
+                                        }
+                                      },
+                                      child: Text(
+                                        'Forgot password?',
+                                        style: TextStyle(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
-                    ),
-                    const LoginButton(label: 'Sign In'),
-                    const LoginSingInWidth(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text("Don't have an account?"),
-                        TextButton(
-                          onPressed: () {
-                            context.router.replace(const LoginCreateView());
-                          },
-                          style: TextButton.styleFrom(padding: EdgeInsets.zero),
-                          child: const Text('Register'),
                         ),
+                        const LoginButton(label: 'Sign In'),
+                        const LoginSingInWidth(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Flexible(
+                                child: Text("Don't have an account? ")),
+                            Flexible(
+                              child: Text(
+                                'Register',
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                              ),
+                            )
+                          ],
+                        )
                       ],
-                    )
-                  ],
-                ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
