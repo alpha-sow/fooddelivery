@@ -19,7 +19,11 @@ class LoginTextField extends StatelessWidget {
         TextField(
           decoration: InputDecoration(
             hintText: hintText,
-            border: const OutlineInputBorder(),
+            border: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(12),
+              ),
+            ),
           ),
         ),
       ],

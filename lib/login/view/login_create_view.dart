@@ -21,7 +21,7 @@ class LoginCreateView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const LoginHeader(
-                      title: 'Login to Your account.',
+                      title: 'Create your new account',
                       subtitle:
                           'Create an account to start looking for the food you like',
                     ),
@@ -99,7 +99,7 @@ class LoginCreateView extends StatelessWidget {
                                 },
                                 style: TextButton.styleFrom(
                                     padding: EdgeInsets.zero),
-                                child: const Text('Register'),
+                                child: const Text('Sign In'),
                               ),
                             ],
                           )
