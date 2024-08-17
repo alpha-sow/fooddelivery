@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+  const LoginButton({super.key, required this.label});
+
+  final String label;
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,8 @@ class LoginButton extends StatelessWidget {
           backgroundColor: Theme.of(context).colorScheme.primary,
           padding: const EdgeInsets.symmetric(vertical: 20),
         ),
-        child: const Text(
-          'Sign In',
+        child: Text(
+          label,
           style: TextStyle(color: Colors.white),
         ),
       ),

@@ -34,9 +34,15 @@ class AppRouter extends RootStackRouter {
               ],
             ),
             AutoRoute(
-              path: 'loginEmail',
+              path: 'email',
               page: LoginEmailView.page,
-            )
+              type: const RouteType.custom(),
+            ),
+            AutoRoute(
+              path: 'create',
+              page: LoginCreateView.page,
+              type: const RouteType.custom(),
+            ),
           ],
         ),
       ];
