@@ -15,10 +15,10 @@ class LoginForgotPasswordView extends StatelessWidget {
           child: Center(
             child: Container(
               constraints: const BoxConstraints(maxWidth: 500),
-              child: const Padding(
-                padding: EdgeInsets.all(25.0),
-                child: Column(
-                  children: [
+              child: Padding(
+                padding: const EdgeInsets.all(25.0),
+                child: ListView(
+                  children: const [
                     LoginHeader(
                       title: 'Forgot password?',
                       subtitle: 'Enter your email address and we’ll send you '

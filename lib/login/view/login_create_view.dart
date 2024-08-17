@@ -96,15 +96,23 @@ class LoginCreateView extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Text("Have an account?"),
-                                  TextButton(
-                                    onPressed: () {
-                                      context.router
-                                          .replace(const LoginEmailView());
-                                    },
-                                    style: TextButton.styleFrom(
-                                        padding: EdgeInsets.zero),
-                                    child: const Text('Sign In'),
+                                  const Flexible(
+                                      child: Text("Have an account? ")),
+                                  Flexible(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        context.router
+                                            .replace(const LoginEmailView());
+                                      },
+                                      child: Text(
+                                        'Sign In',
+                                        style: TextStyle(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                        ),
+                                      ),
+                                    ),
                                   ),
                                 ],
                               )

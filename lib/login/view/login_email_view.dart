@@ -83,10 +83,18 @@ class _LoginEmailViewState extends State<LoginEmailView> {
                             const Flexible(
                                 child: Text("Don't have an account? ")),
                             Flexible(
-                              child: Text(
-                                'Register',
-                                style: TextStyle(
-                                  color: Theme.of(context).colorScheme.primary,
+                              child: GestureDetector(
+                                onTap: () {
+                                  context.router.replace(
+                                    const LoginCreateView(),
+                                  );
+                                },
+                                child: Text(
+                                  'Register',
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                  ),
                                 ),
                               ),
                             )
