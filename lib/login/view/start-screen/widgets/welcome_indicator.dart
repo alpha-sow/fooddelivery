@@ -10,12 +10,17 @@ class WelcomeIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          for (int i = 0; i < numberOfDot; i++)
-            _Dot(indexValue: i, index: index),
-        ],
+      child: Center(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (int i = 0; i < numberOfDot; i++)
+                _Dot(indexValue: i, index: index),
+            ],
+          ),
+        ),
       ),
     );
   }

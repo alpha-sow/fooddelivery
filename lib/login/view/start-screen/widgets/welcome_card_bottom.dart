@@ -7,28 +7,31 @@ class WelcomeCardBottom extends StatelessWidget {
   final void Function()? onNextPressed;
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        TextButton(
-          onPressed: onSkipPressed,
-          child: const Text(
-            'Skip',
-            style: TextStyle(color: Colors.white),
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          TextButton(
+            onPressed: onSkipPressed,
+            child: const Text(
+              'Skip',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
-        ),
-        TextButton.icon(
-          onPressed: onNextPressed,
-          label: const Icon(
-            Icons.arrow_forward,
-            color: Colors.white,
+          TextButton.icon(
+            onPressed: onNextPressed,
+            label: const Icon(
+              Icons.arrow_forward,
+              color: Colors.white,
+            ),
+            icon: const Text(
+              'Next',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
-          icon: const Text(
-            'Next',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
