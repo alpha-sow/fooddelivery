@@ -20,18 +20,9 @@ class LoginEmailView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Login to Your account.',
-                          style: Theme.of(context).textTheme.displayMedium,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
-                          child: Text('Please sign in to your account'),
-                        ),
-                      ],
+                    const LoginHeader(
+                      title: 'Login to Your account.',
+                      subTitle: 'Please sign in to your account',
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -49,7 +40,10 @@ class LoginEmailView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  context.router
+                                      .replace(const LoginForgotPasswordView());
+                                },
                                 child: const Text('Forgot password?'),
                               ),
                             ],

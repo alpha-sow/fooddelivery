@@ -5,5 +5,6 @@ final theme = ThemeData(
     seedColor: Colors.orange,
     primary: Colors.orange,
   ),
+  scaffoldBackgroundColor: Colors.white,
   useMaterial3: true,
 );

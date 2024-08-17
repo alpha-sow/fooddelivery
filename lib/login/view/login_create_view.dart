@@ -20,20 +20,10 @@ class LoginCreateView extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Login to Your account.',
-                          style: Theme.of(context).textTheme.displayMedium,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(vertical: 10.0),
-                          child: Text(
-                            'Create an account to start looking for the food you like',
-                          ),
-                        ),
-                      ],
+                    const LoginHeader(
+                      title: 'Login to Your account.',
+                      subTitle:
+                          'Create an account to start looking for the food you like',
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10.0),

@@ -43,6 +43,11 @@ class AppRouter extends RootStackRouter {
               page: LoginCreateView.page,
               type: const RouteType.custom(),
             ),
+            AutoRoute(
+              path: 'password',
+              page: LoginForgotPasswordView.page,
+              type: const RouteType.custom(),
+            ),
           ],
         ),
       ];
