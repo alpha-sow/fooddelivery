@@ -96,7 +96,7 @@ class _HomeHeader extends StatelessWidget {
       flexibleSpace: FlexibleSpaceBar(
         title: showTitle
             ? const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
                 child: Text(
                   'Provide the best food for you',
                   style: TextStyle(
