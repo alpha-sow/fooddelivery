@@ -5,20 +5,26 @@ class AppTextButtonIcon extends StatelessWidget {
     super.key,
     required this.label,
     required this.icon,
+    this.onPressed,
   });
 
   final Widget label;
   final Widget icon;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 4.0),
-      child: Row(
-        children: [
-          label,
-          icon,
-        ],
+    return InkWell(
+      onTap: onPressed,
+      borderRadius: BorderRadius.circular(50),
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Row(
+          children: [
+            label,
+            icon,
+          ],
+        ),
       ),
     );
   }

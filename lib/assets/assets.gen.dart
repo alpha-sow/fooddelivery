@@ -43,6 +43,9 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/apple.svg
   SvgGenImage get apple => const SvgGenImage('assets/images/icons/apple.svg');
 
+  /// File path: assets/images/icons/burger.svg
+  SvgGenImage get burger => const SvgGenImage('assets/images/icons/burger.svg');
+
   /// File path: assets/images/icons/facebook.svg
   SvgGenImage get facebook =>
       const SvgGenImage('assets/images/icons/facebook.svg');
@@ -50,8 +53,18 @@ class $AssetsImagesIconsGen {
   /// File path: assets/images/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/images/icons/google.svg');
 
+  /// File path: assets/images/icons/pizza.svg
+  SvgGenImage get pizza => const SvgGenImage('assets/images/icons/pizza.svg');
+
+  /// File path: assets/images/icons/soda.svg
+  SvgGenImage get soda => const SvgGenImage('assets/images/icons/soda.svg');
+
+  /// File path: assets/images/icons/tacos.svg
+  SvgGenImage get tacos => const SvgGenImage('assets/images/icons/tacos.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [apple, facebook, google];
+  List<SvgGenImage> get values =>
+      [apple, burger, facebook, google, pizza, soda, tacos];
 }
 
 class Assets {
