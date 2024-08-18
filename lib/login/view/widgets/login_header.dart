@@ -5,15 +5,17 @@ class LoginHeader extends StatelessWidget {
     super.key,
     required this.title,
     required this.subtitle,
+    this.alignment = CrossAxisAlignment.start,
   });
 
   final String title;
   final String subtitle;
+  final CrossAxisAlignment alignment;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: alignment,
       children: [
         Text(
           title,
@@ -23,6 +25,9 @@ class LoginHeader extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Text(
             subtitle,
+            textAlign: alignment == CrossAxisAlignment.center
+                ? TextAlign.center
+                : null,
           ),
         ),
       ],

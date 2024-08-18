@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LoginTextField extends StatelessWidget {
-  const LoginTextField({super.key, this.hintText, this.label});
+  const LoginTextField({
+    super.key,
+    this.hintText,
+    this.label,
+    this.helper,
+  });
 
   final String? hintText;
   final String? label;
+  final String? helper;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +32,7 @@ class LoginTextField extends StatelessWidget {
             ),
           ),
         ),
+        if (helper != null) Text(helper!),
       ],
     );
   }

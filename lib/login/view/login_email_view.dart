@@ -4,14 +4,9 @@ import 'package:fooddelivery/login/view/widgets/widgets.dart';
 import 'package:fooddelivery/router/app_router.gr.dart';
 
 @RoutePage()
-class LoginEmailView extends StatefulWidget {
+class LoginEmailView extends StatelessWidget {
   const LoginEmailView({super.key});
 
-  @override
-  State<LoginEmailView> createState() => _LoginEmailViewState();
-}
-
-class _LoginEmailViewState extends State<LoginEmailView> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

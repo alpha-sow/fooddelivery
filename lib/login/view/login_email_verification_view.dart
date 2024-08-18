@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/login/view/widgets/widgets.dart';
+import 'package:fooddelivery/router/app_router.gr.dart';
 
 @RoutePage()
 class LoginEmailVerificationView extends StatelessWidget {
@@ -62,7 +63,9 @@ class LoginEmailVerificationView extends StatelessWidget {
             padding: const EdgeInsets.all(25),
             child: LoginButton(
               label: 'Continue',
-              onPressed: () {},
+              onPressed: () {
+                context.router.replace(const LoginResetPasswordView());
+              },
             ),
           ),
         ),

@@ -26,8 +26,11 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/icons
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
+  /// File path: assets/images/success.svg
+  SvgGenImage get success => const SvgGenImage('assets/images/success.svg');
+
   /// List of all assets
-  List<AssetGenImage> get values => [bgScreen1, bgScreen2];
+  List<dynamic> get values => [bgScreen1, bgScreen2, success];
 }
 
 class $AssetsImagesIconsGen {

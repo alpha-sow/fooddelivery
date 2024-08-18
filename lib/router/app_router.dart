@@ -54,6 +54,10 @@ class AppRouter extends RootStackRouter {
               path: 'verification',
               page: LoginEmailVerificationView.page,
             ),
+            AutoRoute(
+              path: 'reset',
+              page: LoginResetPasswordView.page,
+            ),
           ],
         ),
       ];
