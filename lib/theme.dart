@@ -4,6 +4,7 @@ final theme = ThemeData(
   colorScheme: ColorScheme.fromSeed(
     seedColor: Colors.orange,
     primary: Colors.orange,
+    secondary: Colors.grey,
   ),
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.white,

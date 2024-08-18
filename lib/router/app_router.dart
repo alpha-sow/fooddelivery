@@ -9,7 +9,6 @@ class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          initial: true,
           path: '/login',
           page: LoginView.page,
           children: [
@@ -57,6 +56,29 @@ class AppRouter extends RootStackRouter {
             AutoRoute(
               path: 'reset',
               page: LoginResetPasswordView.page,
+            ),
+          ],
+        ),
+        AutoRoute(
+          initial: true,
+          path: '/dashboard',
+          page: DashboardView.page,
+          children: [
+            AutoRoute(
+              path: 'home',
+              page: HomeView.page,
+            ),
+            AutoRoute(
+              path: 'cart',
+              page: CartView.page,
+            ),
+            AutoRoute(
+              path: 'chat',
+              page: ChatView.page,
+            ),
+            AutoRoute(
+              path: 'account',
+              page: AccountView.page,
             ),
           ],
         ),

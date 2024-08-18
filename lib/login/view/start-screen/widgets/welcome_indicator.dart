@@ -40,7 +40,9 @@ class _Dot extends StatelessWidget {
         width: 25,
         height: 8,
         decoration: BoxDecoration(
-          color: indexValue == index ? Colors.white : Colors.white60,
+          color: indexValue == index
+              ? Colors.white
+              : Theme.of(context).colorScheme.secondary,
           borderRadius: BorderRadius.circular(50),
         ),
       ),

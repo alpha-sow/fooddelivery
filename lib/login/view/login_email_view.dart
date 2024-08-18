@@ -60,7 +60,10 @@ class LoginEmailView extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const LoginButton(label: 'Sign In'),
+                        LoginButton(
+                          label: 'Sign In',
+                          onPressed: () {},
+                        ),
                         const LoginSingInWidth(),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
