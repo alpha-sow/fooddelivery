@@ -8,14 +8,12 @@ class LoginTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Text(
-          label ?? '',
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.primary,
-          ),
+    return GestureDetector(
+      onTap: onPressed,
+      child: Text(
+        label ?? '',
+        style: TextStyle(
+          color: Theme.of(context).colorScheme.primary,
         ),
       ),
     );
