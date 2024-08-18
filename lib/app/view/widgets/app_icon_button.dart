@@ -16,6 +16,7 @@ class AppIconButton extends StatelessWidget {
       padding: const EdgeInsets.all(4.0),
       child: InkWell(
         onTap: onPressed,
+        borderRadius: BorderRadius.circular(50),
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(color: Colors.white, width: 1),
