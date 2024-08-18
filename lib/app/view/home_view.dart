@@ -229,6 +229,7 @@ class _HomeViewState extends State<HomeView> {
                       rate: '4.9',
                       distance: '190m',
                       price: '€ 17,230',
+                      onPressed: () {},
                     );
                   },
                   childCount: 6,

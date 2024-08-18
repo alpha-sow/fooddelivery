@@ -5,12 +5,16 @@ class AppIconButton extends StatelessWidget {
     super.key,
     required this.icon,
     this.onPressed,
+    this.borderColor,
+    this.showBorder = true,
     this.backgroundColor,
   });
 
   final Widget icon;
   final void Function()? onPressed;
+  final Color? borderColor;
   final Color? backgroundColor;
+  final bool showBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +23,13 @@ class AppIconButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(50),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-            color: backgroundColor ?? Colors.white,
-            width: 1,
-          ),
+          color: backgroundColor,
+          border: showBorder
+              ? Border.all(
+                  color: borderColor ?? Colors.white,
+                  width: 1,
+                )
+              : null,
           borderRadius: BorderRadius.circular(50),
         ),
         child: Padding(
