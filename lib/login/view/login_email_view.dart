@@ -47,28 +47,18 @@ class _LoginEmailViewState extends State<LoginEmailView> {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  Flexible(
-                                    child: GestureDetector(
-                                      onTap: () async {
-                                        final result = await context.router.push<
-                                                    bool>(
-                                                const LoginForgotPasswordView()) ??
-                                            false;
-                                        if (!context.mounted) return;
-                                        if (result) {
-                                          await openModelForgotPassword(
-                                              context);
-                                        }
-                                      },
-                                      child: Text(
-                                        'Forgot password?',
-                                        style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                        ),
-                                      ),
-                                    ),
+                                  LoginTextButton(
+                                    label: 'Forgot password?',
+                                    onPressed: () async {
+                                      final result = await context.router.push<
+                                                  bool>(
+                                              const LoginForgotPasswordView()) ??
+                                          false;
+                                      if (!context.mounted) return;
+                                      if (result) {
+                                        await openModelForgotPassword(context);
+                                      }
+                                    },
                                   ),
                                 ],
                               ),
@@ -81,22 +71,13 @@ class _LoginEmailViewState extends State<LoginEmailView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const Flexible(
-                                child: Text("Don't have an account? ")),
-                            Flexible(
-                              child: GestureDetector(
-                                onTap: () {
-                                  context.router.replace(
-                                    const LoginCreateView(),
-                                  );
-                                },
-                                child: Text(
-                                  'Register',
-                                  style: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                  ),
-                                ),
-                              ),
+                              child: Text("Don't have an account? "),
+                            ),
+                            LoginTextButton(
+                              label: 'Register',
+                              onPressed: () {
+                                context.router.replace(const LoginCreateView());
+                              },
                             )
                           ],
                         )

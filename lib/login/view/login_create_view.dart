@@ -54,7 +54,7 @@ class LoginCreateView extends StatelessWidget {
                                       height: 24.0,
                                       width: 24.0,
                                       child: Checkbox(
-                                        value: true,
+                                        value: false,
                                         onChanged: (value) {},
                                       ),
                                     ),
@@ -62,31 +62,17 @@ class LoginCreateView extends StatelessWidget {
                                       ' I Agree with ',
                                       style: TextStyle(color: Colors.black),
                                     ),
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: Text(
-                                        'Terms of Services',
-                                        style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                        ),
-                                      ),
+                                    LoginTextButton(
+                                      onPressed: () {},
+                                      label: 'Terms of Services',
                                     ),
                                     const Text(
                                       ' and ',
                                       style: TextStyle(color: Colors.black),
                                     ),
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: Text(
-                                        'Privacy Policy',
-                                        style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                        ),
-                                      ),
+                                    LoginTextButton(
+                                      onPressed: () {},
+                                      label: 'Privacy Policy',
                                     ),
                                   ],
                                 ),
@@ -97,22 +83,14 @@ class LoginCreateView extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   const Flexible(
-                                      child: Text("Have an account? ")),
-                                  Flexible(
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        context.router
-                                            .replace(const LoginEmailView());
-                                      },
-                                      child: Text(
-                                        'Sign In',
-                                        style: TextStyle(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                        ),
-                                      ),
-                                    ),
+                                    child: Text("Have an account? "),
+                                  ),
+                                  LoginTextButton(
+                                    label: 'Sign In',
+                                    onPressed: () {
+                                      context.router
+                                          .replace(const LoginEmailView());
+                                    },
                                   ),
                                 ],
                               )
