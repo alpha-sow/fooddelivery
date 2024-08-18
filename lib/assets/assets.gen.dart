@@ -23,6 +23,10 @@ class $AssetsImagesGen {
   AssetGenImage get bgScreen2 =>
       const AssetGenImage('assets/images/bg-screen-2.png');
 
+  /// File path: assets/images/dashboard_header.png
+  AssetGenImage get dashboardHeader =>
+      const AssetGenImage('assets/images/dashboard_header.png');
+
   /// Directory path: assets/images/icons
   $AssetsImagesIconsGen get icons => const $AssetsImagesIconsGen();
 
@@ -30,7 +34,7 @@ class $AssetsImagesGen {
   SvgGenImage get success => const SvgGenImage('assets/images/success.svg');
 
   /// List of all assets
-  List<dynamic> get values => [bgScreen1, bgScreen2, success];
+  List<dynamic> get values => [bgScreen1, bgScreen2, dashboardHeader, success];
 }
 
 class $AssetsImagesIconsGen {

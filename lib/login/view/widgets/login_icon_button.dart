@@ -14,13 +14,10 @@ class LoginIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Ink(
-        decoration: ShapeDecoration(
-          shape: CircleBorder(
-            side: BorderSide(
-              color: Theme.of(context).colorScheme.secondary,
-            ),
-          ),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.white, width: 1),
+          borderRadius: BorderRadius.circular(100),
         ),
         child: IconButton(
           onPressed: onPressed,
