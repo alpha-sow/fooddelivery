@@ -32,11 +32,24 @@ class LoginEmailVerificationView extends StatelessWidget {
                   ),
                   VerificationCode(),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(''),
-                      Text(''),
+                      Text("Didn't receive code ?"),
+                      LoginTextButton(label: ' Resend'),
                     ],
-                  )
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 25.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.watch_later_outlined, size: 20),
+                        Text(' 09:00 '),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
                 ],
               ),
             ),

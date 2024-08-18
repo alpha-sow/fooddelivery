@@ -30,6 +30,7 @@ class _VerificationInput extends StatelessWidget {
         keyboardType: TextInputType.number,
         style: Theme.of(context).textTheme.headlineLarge,
         textAlign: TextAlign.center,
+        autofocus: true,
         decoration: const InputDecoration(
           counter: Offstage(),
           border: OutlineInputBorder(
