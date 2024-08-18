@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/assets/assets.gen.dart';
 
 class AppFoodCard extends StatelessWidget {
-  const AppFoodCard({super.key});
+  const AppFoodCard({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.rate,
+    required this.distance,
+    required this.price,
+  });
+
+  final String image;
+  final String title;
+  final String rate;
+  final String distance;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -21,31 +33,53 @@ class AppFoodCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(Assets.images.bgScreen1.path),
+                  image: AssetImage(image),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
               child: Text(
-                'Ordinary Burgers',
+                title,
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
               ),
             ),
-            const Row(
+            Row(
               children: [
-                Text('4.9'),
-                Spacer(),
-                Text('190m'),
+                Badge(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  backgroundColor: Colors.transparent,
+                  label: Text(rate),
+                  textColor: Colors.black,
+                  child: Icon(
+                    Icons.star,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                const Spacer(),
+                Badge(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  backgroundColor: Colors.transparent,
+                  label: Text(distance),
+                  textColor: Colors.black,
+                  child: Icon(
+                    Icons.location_on,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                ),
+                const Spacer(),
               ],
             ),
-            const SizedBox(
+            SizedBox(
               width: double.infinity,
               child: Text(
-                '\$17,230',
-                textAlign: TextAlign.left,
+                price,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

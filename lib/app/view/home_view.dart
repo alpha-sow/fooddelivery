@@ -223,7 +223,13 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 delegate: SliverChildBuilderDelegate(
                   (BuildContext context, int index) {
-                    return const AppFoodCard();
+                    return AppFoodCard(
+                      image: Assets.images.bgScreen1.path,
+                      title: 'Ordinary Burgers',
+                      rate: '4.9',
+                      distance: '190m',
+                      price: '€ 17,230',
+                    );
                   },
                   childCount: 6,
                 ),
