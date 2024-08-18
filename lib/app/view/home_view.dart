@@ -4,114 +4,111 @@ import 'package:fooddelivery/app/view/widgets/widgets.dart';
 import 'package:fooddelivery/assets/assets.gen.dart';
 
 @RoutePage()
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  final ScrollController _scrollController = ScrollController();
+  final double height = 180.0;
+  double _flexibleSpaceHeight = 180.0;
+  bool _showTitle = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController.addListener(() {
+      setState(() {
+        _flexibleSpaceHeight = height - _scrollController.offset;
+        if (_flexibleSpaceHeight < 0) {
+          _flexibleSpaceHeight = 0; // Prevent negative height
+        }
+        _showTitle = _scrollController.offset < height * .5;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(160),
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(Assets.images.dashboardHeader.path),
-            ),
+      body: CustomScrollView(
+        controller: _scrollController,
+        slivers: [
+          _HomeHeader(
+            height: height,
+            showTitle: _showTitle,
+            flexibleSpaceHeight: _flexibleSpaceHeight,
           ),
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      const Column(
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                'Your Location',
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              Icon(
-                                Icons.keyboard_arrow_down,
-                                color: Colors.white,
-                              )
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(right: 10.0),
-                                child: Icon(
-                                  Icons.location_on_outlined,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                'New York City',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      const Spacer(),
-                      Row(
-                        children: [
-                          AppIconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.search_rounded,
-                              color: Colors.white,
-                            ),
-                          ),
-                          AppIconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.notifications_none_rounded,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Provide the best',
-                        style:
-                            Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                      ),
-                      Text(
-                        'food for you',
-                        style:
-                            Theme.of(context).textTheme.headlineSmall?.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
+        ],
       ),
-      body: ListView(
-        children: const [],
+    );
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+}
+
+class _HomeHeader extends StatelessWidget {
+  const _HomeHeader({
+    required this.flexibleSpaceHeight,
+    this.showTitle = false,
+    required this.height,
+  });
+  final double height;
+  final double flexibleSpaceHeight;
+  final bool showTitle;
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      expandedHeight: height,
+      pinned: true,
+      title: Row(
+        children: [
+          const AppHeaderLocation(),
+          const Spacer(),
+          Row(
+            children: [
+              AppIconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.search_rounded,
+                  color: Colors.white,
+                ),
+              ),
+              AppIconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.notifications_none_rounded,
+                  color: Colors.white,
+                ),
+              )
+            ],
+          )
+        ],
+      ),
+      flexibleSpace: FlexibleSpaceBar(
+        title: showTitle
+            ? const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text(
+                  'Provide the best food for you',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            : null,
+        background: Container(
+          child: Assets.images.dashboardHeader.image(fit: BoxFit.fill),
+        ),
       ),
     );
   }
