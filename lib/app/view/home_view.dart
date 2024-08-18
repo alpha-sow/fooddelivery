@@ -64,19 +64,22 @@ class _HomeViewState extends State<HomeView> {
                           color: Colors.white,
                         ),
                       ),
-                      AppTextButtonIcon(
-                        label: const Icon(
-                          Icons.location_on_rounded,
-                          color: Colors.white,
-                        ),
-                        icon: Text(
-                          'New York City',
-                          style:
-                              Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                        ),
+                      Row(
+                        children: [
+                          Assets.images.icons.location.svg(
+                            color: Colors.white,
+                          ),
+                          Text(
+                            'New York City',
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -85,16 +88,14 @@ class _HomeViewState extends State<HomeView> {
                     children: [
                       AppIconButton(
                         onPressed: () {},
-                        icon: const Icon(
-                          Icons.search_rounded,
+                        icon: Assets.images.icons.search.svg(
                           color: Colors.white,
                         ),
                       ),
                       const SizedBox(width: 10),
                       AppIconButton(
                         onPressed: () {},
-                        icon: const Icon(
-                          Icons.notifications_none_rounded,
+                        icon: Assets.images.icons.notifications.svg(
                           color: Colors.white,
                         ),
                       )
