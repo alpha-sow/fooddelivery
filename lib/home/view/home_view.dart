@@ -70,7 +70,8 @@ class _HomeViewState extends State<HomeView> {
                         Row(
                           children: [
                             Assets.images.icons.location.svg(
-                              color: Colors.white,
+                              colorFilter: const ColorFilter.mode(
+                                  Colors.white, BlendMode.srcIn),
                             ),
                             Text(
                               'New York City',
@@ -92,14 +93,16 @@ class _HomeViewState extends State<HomeView> {
                         HomeIconButton(
                           onPressed: () {},
                           icon: Assets.images.icons.search.svg(
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(
+                                Colors.white, BlendMode.srcIn),
                           ),
                         ),
                         const SizedBox(width: 10),
                         HomeIconButton(
                           onPressed: () {},
                           icon: Assets.images.icons.notifications.svg(
-                            color: Colors.white,
+                            colorFilter: const ColorFilter.mode(
+                                Colors.white, BlendMode.srcIn),
                           ),
                         )
                       ],
