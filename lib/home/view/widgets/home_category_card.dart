@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppCategoryCard extends StatelessWidget {
-  const AppCategoryCard({
+class HomeCategoryCard extends StatelessWidget {
+  const HomeCategoryCard({
     super.key,
     required this.title,
     required this.icon,

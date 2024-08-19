@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppTextButtonIcon extends StatelessWidget {
-  const AppTextButtonIcon({
+class HomeTextButtonIcon extends StatelessWidget {
+  const HomeTextButtonIcon({
     super.key,
     required this.label,
     required this.icon,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppIconButton extends StatelessWidget {
-  const AppIconButton({
+class HomeIconButton extends StatelessWidget {
+  const HomeIconButton({
     super.key,
     required this.icon,
     this.onPressed,

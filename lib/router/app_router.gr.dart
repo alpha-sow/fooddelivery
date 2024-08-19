@@ -13,7 +13,7 @@ import 'package:fooddelivery/app/view/account_view.dart' as _i1;
 import 'package:fooddelivery/app/view/cart_view.dart' as _i2;
 import 'package:fooddelivery/app/view/chat_view.dart' as _i3;
 import 'package:fooddelivery/app/view/dashboard_view.dart' as _i4;
-import 'package:fooddelivery/app/view/home_view.dart' as _i5;
+import 'package:fooddelivery/home/view/home_view.dart' as _i5;
 import 'package:fooddelivery/login/view/login_create_view.dart' as _i6;
 import 'package:fooddelivery/login/view/login_email_verification_view.dart'
     as _i7;

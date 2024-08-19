@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/app/view/widgets/app_icon_button.dart';
+import 'package:fooddelivery/home/view/widgets/home_icon_button.dart';
 
-class AppFoodCard extends StatelessWidget {
-  const AppFoodCard({
+class HomeFoodCard extends StatelessWidget {
+  const HomeFoodCard({
     super.key,
     required this.image,
     required this.title,
@@ -49,7 +49,7 @@ class AppFoodCard extends StatelessWidget {
                     right: 0.0,
                     child: Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: AppIconButton(
+                      child: HomeIconButton(
                         showBorder: false,
                         backgroundColor: Colors.white,
                         icon: Icon(

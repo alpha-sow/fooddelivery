@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/app/view/widgets/widgets.dart';
 import 'package:fooddelivery/assets/assets.gen.dart';
+import 'package:fooddelivery/home/view/widgets/widgets.dart';
 
 @RoutePage()
 class HomeView extends StatefulWidget {
@@ -50,7 +50,7 @@ class _HomeViewState extends State<HomeView> {
                   children: [
                     Column(
                       children: [
-                        AppTextButtonIcon(
+                        HomeTextButtonIcon(
                           onPressed: () {},
                           label: Text(
                             'Your Location',
@@ -89,14 +89,14 @@ class _HomeViewState extends State<HomeView> {
                     const Spacer(),
                     Row(
                       children: [
-                        AppIconButton(
+                        HomeIconButton(
                           onPressed: () {},
                           icon: Assets.images.icons.search.svg(
                             color: Colors.white,
                           ),
                         ),
                         const SizedBox(width: 10),
-                        AppIconButton(
+                        HomeIconButton(
                           onPressed: () {},
                           icon: Assets.images.icons.notifications.svg(
                             color: Colors.white,
@@ -152,7 +152,7 @@ class _HomeViewState extends State<HomeView> {
                           ),
                           Row(
                             children: [
-                              AppCategoryCard(
+                              HomeCategoryCard(
                                 title: 'Burger',
                                 icon: Assets.images.icons.burger.svg(
                                   width: 32,
@@ -166,7 +166,7 @@ class _HomeViewState extends State<HomeView> {
                                   });
                                 },
                               ),
-                              AppCategoryCard(
+                              HomeCategoryCard(
                                 title: 'Tacos',
                                 icon: Assets.images.icons.tacos.svg(
                                   width: 32,
@@ -180,7 +180,7 @@ class _HomeViewState extends State<HomeView> {
                                   });
                                 },
                               ),
-                              AppCategoryCard(
+                              HomeCategoryCard(
                                 title: 'Soda',
                                 icon: Assets.images.icons.soda.svg(
                                   width: 32,
@@ -194,7 +194,7 @@ class _HomeViewState extends State<HomeView> {
                                   });
                                 },
                               ),
-                              AppCategoryCard(
+                              HomeCategoryCard(
                                 title: 'Pizza',
                                 icon: Assets.images.icons.pizza.svg(
                                   width: 32,
@@ -228,7 +228,7 @@ class _HomeViewState extends State<HomeView> {
                   ),
                   delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
-                      return AppFoodCard(
+                      return HomeFoodCard(
                         image: Assets.images.bgScreen1.path,
                         title: 'Ordinary Burgers',
                         rate: '4.9',
