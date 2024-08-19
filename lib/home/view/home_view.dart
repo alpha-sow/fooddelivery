@@ -1,7 +1,9 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/assets/assets.gen.dart';
 import 'package:fooddelivery/home/view/widgets/widgets.dart';
+import 'package:fooddelivery/router/app_router.gr.dart';
 
 @RoutePage()
 class HomeView extends StatefulWidget {
@@ -103,7 +105,9 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         const SizedBox(width: 10),
                         HomeIconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.router.push(const NotificationView());
+                          },
                           icon: Assets.images.icons.notifications.svg(
                             colorFilter: const ColorFilter.mode(
                               Colors.white,

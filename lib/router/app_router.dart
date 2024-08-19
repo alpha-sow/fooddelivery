@@ -82,5 +82,9 @@ class AppRouter extends RootStackRouter {
             ),
           ],
         ),
+        AutoRoute(
+          path: '/notification',
+          page: NotificationView.page,
+        ),
       ];
 }
