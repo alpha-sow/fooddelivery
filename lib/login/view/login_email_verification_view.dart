@@ -1,3 +1,4 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/login/view/widgets/widgets.dart';
@@ -22,25 +23,29 @@ class LoginEmailVerificationView extends StatelessWidget {
         body: Center(
           child: Container(
             constraints: const BoxConstraints(maxWidth: 500),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
-                  LoginHeader(
+                  const LoginHeader(
                     title: 'Email verification',
                     subtitle: 'Enter the verification code we send you '
                         'on: Alberts******@gmail.com',
                   ),
-                  VerificationCode(),
+                  const VerificationCode(),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Didn't receive code ?"),
-                      LoginTextButton(label: ' Resend'),
+                      const Text("Didn't receive code ?"),
+                      Button(
+                        variant: Variant.link,
+                        child: const Text('Resend'),
+                        onPressed: () {},
+                      ),
                     ],
                   ),
-                  Spacer(),
-                  Padding(
+                  const Spacer(),
+                  const Padding(
                     padding: EdgeInsets.symmetric(vertical: 25.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +55,7 @@ class LoginEmailVerificationView extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             ),
@@ -61,11 +66,11 @@ class LoginEmailVerificationView extends StatelessWidget {
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(25),
-            child: LoginButton(
-              label: 'Continue',
+            child: Button(
               onPressed: () {
                 context.router.replace(const LoginResetPasswordView());
               },
+              child: const Text('Continue'),
             ),
           ),
         ),

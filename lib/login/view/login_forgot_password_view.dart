@@ -1,3 +1,4 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/login/view/widgets/widgets.dart';
@@ -24,7 +25,7 @@ class LoginForgotPasswordView extends StatelessWidget {
                       subtitle: 'Enter your email address and we’ll send you '
                           'confirmation code to reset your password',
                     ),
-                    LoginTextField(
+                    Input(
                       label: 'Email Address',
                       hintText: 'Enter Email',
                     ),
@@ -39,11 +40,11 @@ class LoginForgotPasswordView extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 500),
           child: Padding(
             padding: const EdgeInsets.all(25.0),
-            child: LoginButton(
-              label: 'Continue',
+            child: Button(
               onPressed: () {
                 context.router.maybePop(true);
               },
+              child: const Text('Continue'),
             ),
           ),
         ),

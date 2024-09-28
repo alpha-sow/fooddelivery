@@ -12,22 +12,37 @@ class NotificationView extends StatelessWidget {
         centerTitle: true,
         title: const Text('Notification'),
       ),
-      body: Column(
+      body: ListView(
         children: [
-          Expanded(
-            child: Container(
-              color: Colors.red,
-              child: ListView(
-                children: [],
-              ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Today',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge
+                      ?.copyWith(fontWeight: FontWeight.w500),
+                ),
+              ],
             ),
           ),
-          Expanded(
-            child: Container(
-              color: Colors.blue,
-              child: ListView(
-                children: [],
-              ),
+          const Divider(thickness: 4),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Today',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge
+                      ?.copyWith(fontWeight: FontWeight.w500),
+                ),
+              ],
             ),
           ),
         ],

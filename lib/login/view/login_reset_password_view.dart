@@ -1,3 +1,4 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/login/view/widgets/widgets.dart';
@@ -34,15 +35,15 @@ class LoginResetPasswordView extends StatelessWidget {
                           subtitle:
                               'Your new password must be different from the previously used password',
                         ),
-                        LoginTextField(
+                        Input(
                           label: 'New Password',
                           hintText: 'New Password',
-                          helper: 'Must be at least 8 character',
+                          description: 'Must be at least 8 character',
                         ),
-                        LoginTextField(
+                        Input(
                           label: 'Confirm Password',
                           hintText: 'Confirm Password',
-                          helper: 'Both password must match',
+                          description: 'Both password must match',
                         ),
                       ],
                     ),
@@ -58,8 +59,8 @@ class LoginResetPasswordView extends StatelessWidget {
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(25),
-            child: LoginButton(
-              label: 'Confirm',
+            child: Button(
+              child: const Text('Confirm'),
               onPressed: () async {
                 await openModelForgotPassword(context);
               },

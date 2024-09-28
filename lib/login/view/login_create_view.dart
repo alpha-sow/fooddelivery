@@ -1,3 +1,4 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/login/view/widgets/widgets.dart';
@@ -33,15 +34,15 @@ class LoginCreateView extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const LoginTextField(
+                              const Input(
                                 label: 'Email Address',
                                 hintText: 'Enter Email',
                               ),
-                              const LoginTextField(
+                              const Input(
                                 label: 'User name',
                                 hintText: 'Enter user name',
                               ),
-                              const LoginTextField(
+                              const Input(
                                 label: 'Password',
                                 hintText: 'Password',
                               ),
@@ -62,22 +63,27 @@ class LoginCreateView extends StatelessWidget {
                                       ' I Agree with ',
                                       style: TextStyle(color: Colors.black),
                                     ),
-                                    LoginTextButton(
+                                    Button(
+                                      variant: Variant.link,
                                       onPressed: () {},
-                                      label: 'Terms of Services',
+                                      child: const Text('Terms of Services'),
                                     ),
                                     const Text(
                                       ' and ',
                                       style: TextStyle(color: Colors.black),
                                     ),
-                                    LoginTextButton(
+                                    Button(
+                                      variant: Variant.link,
                                       onPressed: () {},
-                                      label: 'Privacy Policy',
+                                      child: const Text('Privacy Policy'),
                                     ),
                                   ],
                                 ),
                               ),
-                              const LoginButton(label: 'Register'),
+                              Button(
+                                onPressed: () {},
+                                child: const Text('Register'),
+                              ),
                               const LoginSingInWidth(),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -85,8 +91,9 @@ class LoginCreateView extends StatelessWidget {
                                   const Flexible(
                                     child: Text("Have an account? "),
                                   ),
-                                  LoginTextButton(
-                                    label: 'Sign In',
+                                  Button(
+                                    variant: Variant.link,
+                                    child: const Text('Sign In'),
                                     onPressed: () {
                                       context.router
                                           .replace(const LoginEmailView());

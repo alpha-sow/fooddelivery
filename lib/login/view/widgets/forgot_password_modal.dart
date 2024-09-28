@@ -1,5 +1,5 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:flutter/material.dart';
-import 'package:fooddelivery/login/view/widgets/login_button.dart';
 import 'package:fooddelivery/login/view/widgets/login_header.dart';
 import 'package:fooddelivery/login/view/widgets/login_modal.dart';
 
@@ -29,9 +29,9 @@ class ForgotPasswordModal extends StatelessWidget {
             title: 'Send via Email',
             subtitle: 'Albertstevano@gmail.com',
           ),
-          LoginButton(
-            label: 'Continue',
+          Button(
             onPressed: onContinuePressed,
+            child: const Text('Continue'),
           ),
         ],
       ),

@@ -1,6 +1,6 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/assets/assets.gen.dart';
-import 'package:fooddelivery/login/view/widgets/login_button.dart';
 import 'package:fooddelivery/login/view/widgets/login_header.dart';
 import 'package:fooddelivery/login/view/widgets/login_modal.dart';
 
@@ -24,9 +24,9 @@ class ConfirmPasswordResetModal extends StatelessWidget {
                   'again with a new password',
             ),
           ),
-          LoginButton(
-            label: 'Login',
+          Button(
             onPressed: onPressed,
+            child: const Text('Login'),
           ),
         ],
       ),

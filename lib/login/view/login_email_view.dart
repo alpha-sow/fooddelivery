@@ -1,3 +1,4 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fooddelivery/login/view/widgets/widgets.dart';
@@ -31,19 +32,20 @@ class LoginEmailView extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 10.0),
                           child: Column(
                             children: [
-                              const LoginTextField(
+                              const Input(
                                 label: 'Email Address',
                                 hintText: 'Enter Email',
                               ),
-                              const LoginTextField(
+                              const Input(
                                 label: 'Password',
                                 hintText: 'Password',
+                                type: Type.password,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  LoginTextButton(
-                                    label: 'Forgot password?',
+                                  Button(
+                                    variant: Variant.link,
                                     onPressed: () async {
                                       final result = await context.router.push<
                                                   bool>(
@@ -54,14 +56,15 @@ class LoginEmailView extends StatelessWidget {
                                         await openModelForgotPassword(context);
                                       }
                                     },
+                                    child: const Text('Forgot password?'),
                                   ),
                                 ],
                               ),
                             ],
                           ),
                         ),
-                        LoginButton(
-                          label: 'Sign In',
+                        Button(
+                          child: const Text('Sign In'),
                           onPressed: () {
                             context.router.replace(const DashboardView());
                           },
@@ -73,11 +76,12 @@ class LoginEmailView extends StatelessWidget {
                             const Flexible(
                               child: Text("Don't have an account? "),
                             ),
-                            LoginTextButton(
-                              label: 'Register',
+                            Button(
+                              variant: Variant.link,
                               onPressed: () {
                                 context.router.replace(const LoginCreateView());
                               },
+                              child: const Text('Register'),
                             )
                           ],
                         )
