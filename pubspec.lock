@@ -14,7 +14,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "86583c833c83b6d0ca37f01874d70d070ce9239d"
+      resolved-ref: ebcb1b99bbe630da141f516a48d47cb39f64e809
       url: "https://github.com/alpha-sow/alpha_ui.git"
     source: git
     version: "0.0.1"
