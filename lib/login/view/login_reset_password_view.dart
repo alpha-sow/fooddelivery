@@ -59,11 +59,14 @@ class LoginResetPasswordView extends StatelessWidget {
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(25),
-            child: Button(
-              child: const Text('Confirm'),
-              onPressed: () async {
-                await openModelForgotPassword(context);
-              },
+            child: SizedBox(
+              width: double.infinity,
+              child: Button(
+                child: const Text('Confirm'),
+                onPressed: () async {
+                  await openModelForgotPassword(context);
+                },
+              ),
             ),
           ),
         ),

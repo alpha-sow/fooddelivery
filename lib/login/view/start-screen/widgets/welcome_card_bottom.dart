@@ -1,3 +1,4 @@
+import 'package:alpha_ui/alpha_ui.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeCardBottom extends StatelessWidget {
@@ -10,22 +11,17 @@ class WelcomeCardBottom extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        TextButton(
+        Button(
           onPressed: onSkipPressed,
-          child: const Text(
-            'Skip',
-            style: TextStyle(color: Colors.white),
-          ),
+          child: const Text('Skip'),
         ),
-        TextButton.icon(
+        Button(
           onPressed: onNextPressed,
-          label: const Icon(
-            Icons.arrow_forward,
-            color: Colors.white,
-          ),
-          icon: const Text(
-            'Next',
-            style: TextStyle(color: Colors.white),
+          child: const Row(
+            children: [
+              Text('next'),
+              Icon(Icons.arrow_forward),
+            ],
           ),
         ),
       ],

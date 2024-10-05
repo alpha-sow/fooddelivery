@@ -66,11 +66,14 @@ class LoginEmailVerificationView extends StatelessWidget {
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(25),
-            child: Button(
-              onPressed: () {
-                context.router.replace(const LoginResetPasswordView());
-              },
-              child: const Text('Continue'),
+            child: SizedBox(
+              width: double.infinity,
+              child: Button(
+                onPressed: () {
+                  context.router.replace(const LoginResetPasswordView());
+                },
+                child: const Text('Continue'),
+              ),
             ),
           ),
         ),

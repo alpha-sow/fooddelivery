@@ -63,11 +63,14 @@ class LoginEmailView extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Button(
-                          child: const Text('Sign In'),
-                          onPressed: () {
-                            context.router.replace(const DashboardView());
-                          },
+                        SizedBox(
+                          width: double.infinity,
+                          child: Button(
+                            child: const Text('Sign In'),
+                            onPressed: () {
+                              context.router.replace(const DashboardView());
+                            },
+                          ),
                         ),
                         const LoginSingInWidth(),
                         Row(

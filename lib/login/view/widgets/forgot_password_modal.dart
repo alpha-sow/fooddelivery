@@ -29,9 +29,12 @@ class ForgotPasswordModal extends StatelessWidget {
             title: 'Send via Email',
             subtitle: 'Albertstevano@gmail.com',
           ),
-          Button(
-            onPressed: onContinuePressed,
-            child: const Text('Continue'),
+          SizedBox(
+            width: double.infinity,
+            child: Button(
+              onPressed: onContinuePressed,
+              child: const Text('Continue'),
+            ),
           ),
         ],
       ),

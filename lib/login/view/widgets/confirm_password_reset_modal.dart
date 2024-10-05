@@ -24,9 +24,12 @@ class ConfirmPasswordResetModal extends StatelessWidget {
                   'again with a new password',
             ),
           ),
-          Button(
-            onPressed: onPressed,
-            child: const Text('Login'),
+          SizedBox(
+            width: double.infinity,
+            child: Button(
+              onPressed: onPressed,
+              child: const Text('Login'),
+            ),
           ),
         ],
       ),

@@ -40,11 +40,14 @@ class LoginForgotPasswordView extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 500),
           child: Padding(
             padding: const EdgeInsets.all(25.0),
-            child: Button(
-              onPressed: () {
-                context.router.maybePop(true);
-              },
-              child: const Text('Continue'),
+            child: SizedBox(
+              width: double.infinity,
+              child: Button(
+                onPressed: () {
+                  context.router.maybePop(true);
+                },
+                child: const Text('Continue'),
+              ),
             ),
           ),
         ),
